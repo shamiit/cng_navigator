@@ -15,8 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application
-        // config
-        // domain
         // models
         // pages
         // providers
@@ -106,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button thi s many times:',
             ),
             Text(
               '$_counter',
