@@ -1,8 +1,17 @@
+import 'package:cng_navigator/domain/Authentication/widgets/MobileAuth.dart';
+import 'package:cng_navigator/domain/Authentication/widgets/OtpVerification.dart';
 import 'package:flutter/material.dart';
 
 void main() {
 
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    initialRoute: 'MobileAuth',
+    routes: {
+      'MobileAuth': (context) => MobileAuth(),
+      'OtpVerification': (context) => OtpVerification(),
+
+    },
+  ));
 }
 
 class MyApp extends StatelessWidget {
