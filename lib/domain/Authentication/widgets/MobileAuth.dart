@@ -60,7 +60,7 @@ class _MobileAuthState extends State<MobileAuth> {
               const SizedBox(
                 height: 45,
                 child: ElevatedButton(
-                  onPressed: null, // TODO: Implement the "Get OTP" functionality
+                  onPressed: null,
                   child: Text("Get OTP"),
                 ),
               ),
