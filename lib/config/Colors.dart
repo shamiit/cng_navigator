@@ -19,4 +19,4 @@ const Color loginButtonTextColor = Color(0xFFE507B9);
 
 int bnBarColor = 200;
 int deepColor = 800;
-int navlen = 4;
+int navlen = 0;

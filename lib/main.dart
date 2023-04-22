@@ -1,4 +1,5 @@
 import 'package:cng_navigator/config/Colors.dart';
+import 'package:cng_navigator/domain/Authentication/LoginChecker.dart';
 import 'package:cng_navigator/domain/Authentication/widgets/MobileAuth.dart';
 import 'package:cng_navigator/domain/Authentication/widgets/OtpVerification.dart';
 import 'package:cng_navigator/shared/functions/popupSnakbar.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           storageBucket: "cngnavigator.appspot.com",
           messagingSenderId: "774275349732",
           appId: "1:774275349732:android:49d42cbd68047bba4a80f1",
-          // measurementId: "G-4Z2VBTH0BN"
+          // measurementId: ""
       )
   );
   final navigatorKey = GlobalKey<NavigatorState>();
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
             }
             if(snapshot.connectionState == ConnectionState.done){
               // return OrderTrackingPage();
-              return const MobileAuth();
+              return const LoginChecker();
             }
             return const CircularProgressIndicator();
           }
