@@ -55,38 +55,44 @@ class _MobileAuthState extends State<MobileAuth> {
                 decoration: BoxDecoration(border: Border.all(width: 1,color: loginColor2),
                 borderRadius: BorderRadius.circular(10)),
                 child: Row(
-                  children: const [
-                    SizedBox(width: 10,),
+                  children:  [
+                    const SizedBox(width: 10,),
                     SizedBox(
                       width: 40,
                       child: TextField(
-                        //controller: CountryCode,
-                        decoration: InputDecoration(border: InputBorder.none),
+                        controller: CountryCode,
+                        decoration: const InputDecoration(border: InputBorder.none),
                       ),
                     ),
-                    SizedBox(width: 10,),
-                    Text("|",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 33,color: Colors.grey)),
-                    SizedBox(width: 10,),
-                    Expanded(
+                    const SizedBox(width: 10,),
+                    const Text("|",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 33,color: Colors.grey)),
+                    const SizedBox(width: 10,),
+                    const Expanded(
                       child: TextField(
                         decoration: InputDecoration(border: InputBorder.none,hintText: "Phone"),
 
                       ),
                     ),
                   ],
+
                 ),
+
               ),
               const SizedBox(height: 12),
-
-              // Display the "Get OTP" button
-              const SizedBox(
+               SizedBox(
                 height: 45,
                 child: ElevatedButton(
-                  onPressed: null,
-                  child: Text("Get OTP"),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "OtpVerification");
+                  },
+                  style: ElevatedButton.styleFrom(primary: Colors.red),
+                  child: const Text("Get OTP"),
                 ),
               ),
+
+
             ],
+
           ),
         ),
       ),
