@@ -9,6 +9,14 @@ class MobileAuth extends StatefulWidget {
 }
 
 class _MobileAuthState extends State<MobileAuth> {
+  TextEditingController CountryCode = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    CountryCode.text = "+91";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +52,25 @@ class _MobileAuthState extends State<MobileAuth> {
 
               // Display the phone number input field
               Container(
-
+                decoration: BoxDecoration(border: Border.all(width: 1,color: loginColor2),
+                borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   children: const [
+                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 40,
+                      child: TextField(
+                        //controller: CountryCode,
+                        decoration: InputDecoration(border: InputBorder.none),
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Text("|",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 33,color: Colors.grey)),
+                    SizedBox(width: 10,),
                     Expanded(
                       child: TextField(
+                        decoration: InputDecoration(border: InputBorder.none,hintText: "Phone"),
+
                       ),
                     ),
                   ],
