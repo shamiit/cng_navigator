@@ -45,7 +45,7 @@ class _OtpVerificationState extends State<OtpVerification> {
             children: [
               // Display the logo image
               Image.asset(
-                'assets/logo_login_page.png',
+                'assets/logo6.png',
                 width: 150,
                 height: 150,
               ),

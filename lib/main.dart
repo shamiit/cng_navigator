@@ -6,6 +6,7 @@ void main() {
 
   runApp(MaterialApp(
     initialRoute: 'MobileAuth',
+    debugShowCheckedModeBanner: false,
     routes: {
       'MobileAuth': (context) => MobileAuth(),
       'OtpVerification': (context) => OtpVerification(),
