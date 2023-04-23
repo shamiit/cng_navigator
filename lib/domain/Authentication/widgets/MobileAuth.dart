@@ -118,42 +118,7 @@ class _MobileAuthState extends State<MobileAuth> {
                   height: 45,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () async {
-                      // Validate the phone number entered by the user
-                      if (!_formKey.currentState!.validate()) {
-                        return;
-                      }
-
-                      // Start the phone number verification process
-                      try {
-                        await _auth.verifyPhoneNumber(
-                          phoneNumber: phoneNumber!,
-                          verificationCompleted: (PhoneAuthCredential credential) {},
-                          verificationFailed: (FirebaseAuthException e) {
-                            if (e.code == 'invalid-phone-number') {
-                              print('The provided phone number is not valid.');
-                            }
-                          },
-                          codeSent: (String verificationId, int? resendToken) {
-                            // Save the verification ID and resend token so we can use them later
-                            _verificationId = verificationId;
-                            _resendToken = resendToken;
-
-                            // Navigate to the OTP verification screen
-                            Navigator.pushNamed(
-                              context,
-                              'OtpVerification',
-                              arguments: {'verificationId': verificationId},
-                            );
-                          },
-                          codeAutoRetrievalTimeout: (String verificationId) {
-                            // Timeout event occurs
-                          },
-                        );
-                      } catch (e) {
-                        print('Error occurred: $e');
-                      }
-                    },
+                    onPressed: null,
                     child: Text('Get OTP'),
                   ),
                 ),
