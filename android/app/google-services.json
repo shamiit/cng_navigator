@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774275349732",
+    "project_id": "cngnavigator",
+    "storage_bucket": "cngnavigator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774275349732:android:49d42cbd68047bba4a80f1",
+        "android_client_info": {
+          "package_name": "com.cngnavigator.cng_navigator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774275349732-pnn35kc1m04hm4avs88sjhshj1c970m0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB483rAHGtlqCd5ccI3Lz3-ahsdS2-lBDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774275349732-pnn35kc1m04hm4avs88sjhshj1c970m0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

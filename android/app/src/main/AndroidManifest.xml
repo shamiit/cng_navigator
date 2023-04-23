@@ -1,9 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.cngnavigator.cng_navigator">
+
    <application
         android:label="cng_navigator"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyB483rAHGtlqCd5ccI3Lz3-ahsdS2-lBDI"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,5 +35,15 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-    </application>
+       <provider
+           android:name="com.pichillilorenzo.flutter_inappwebview.InAppWebViewFileProvider"
+           android:authorities="${applicationId}.flutter_inappwebview.fileprovider"
+           android:exported="false"
+           android:grantUriPermissions="true">
+           <meta-data
+               android:name="android.support.FILE_PROVIDER_PATHS"
+               android:resource="@xml/provider_paths" />
+       </provider>
+
+   </application>
 </manifest>
