@@ -2,6 +2,7 @@ import 'package:cng_navigator/config/Colors.dart';
 import 'package:cng_navigator/config/DynamicConstants.dart';
 import 'package:cng_navigator/domain/erpwebsite/WebViewController.dart';
 import 'package:cng_navigator/domain/map/MapHome.dart';
+import 'package:cng_navigator/domain/map/widgets/BottomSheetFuelTrip.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -64,7 +65,26 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           endDrawerEnableOpenDragGesture: true,
-          body: const SafeArea(child: MapHomePage()),
+          body: SafeArea(child: Stack(
+            fit: StackFit.expand,
+            children: [
+              MapHomePage(),
+              DraggableScrollableSheet(
+                  initialChildSize: 0.1,
+                  maxChildSize: 0.4,
+                  minChildSize: 0.1,
+                  expand: false,
+                  builder: (context, scrollController) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
+                      child: SingleChildScrollView(
+                        controller: scrollController,
+                        child: const FuelNowPlanTripOptionsScreen(),
+                      ),
+                    );
+                  })
+            ],
+          )),
           floatingActionButton: favoriteButton(navTopPadding),
           floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
           floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
@@ -210,6 +230,28 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+
+  void _showModalBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(30),
+          )),
+      builder: (context) => DraggableScrollableSheet(
+          initialChildSize: 0.4,
+          maxChildSize: 0.9,
+          minChildSize: 0.32,
+          expand: false,
+          builder: (context, scrollController) {
+            return SingleChildScrollView(
+              controller: scrollController,
+              child: const FuelNowPlanTripOptionsScreen(),
+            );
+          }),
     );
   }
 }

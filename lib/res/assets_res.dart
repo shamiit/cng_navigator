@@ -8,9 +8,11 @@ class AssetsRes {
   static const String BUS = 'assets/icons/bus.png';
   static const String BUSTOP = 'assets/icons/bustop.png';
   static const String FOCUS = 'assets/icons/focus.png';
+  static const String GASSTATION = 'assets/icons/gasStation.png';
   static const String INVISIBLE = 'assets/icons/invisible.png';
   static const String NOTFOCUS = 'assets/icons/notfocus.png';
   static const String PERSON = 'assets/icons/person.png';
+  static const String PLANNEDPATH = 'assets/icons/plannedPath.png';
   static const String VISIBLE = 'assets/icons/visible.png';
   static const String LOGIN = 'assets/images/login.png';
   static const String REGISTER = 'assets/images/register.png';

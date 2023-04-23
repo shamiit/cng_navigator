@@ -120,9 +120,11 @@ flutter:
     - assets/icons/bus.png
     - assets/icons/bustop.png
     - assets/icons/focus.png
+    - assets/icons/gasStation.png
     - assets/icons/invisible.png
     - assets/icons/notfocus.png
     - assets/icons/person.png
+    - assets/icons/plannedPath.png
     - assets/icons/visible.png
     - assets/images/login.png
     - assets/images/register.png
