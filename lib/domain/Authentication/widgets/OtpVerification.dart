@@ -29,7 +29,7 @@ class _OtpVerificationState extends State<OtpVerification> {
 
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration?.copyWith(
-        color: Color.fromRGBO(234, 239, 243, 1),
+        color: const Color.fromRGBO(234, 239, 243, 1),
       ),
     );
 
@@ -39,60 +39,87 @@ class _OtpVerificationState extends State<OtpVerification> {
       body: Container(
         margin: const EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Display the logo image
-              Image.asset(
-                'assets/logo6.png',
-                width: 150,
-                height: 150,
-              ),
-              const SizedBox(height: 8),
+        child: Transform.translate(
+          offset: const Offset(0, -50),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Display the logo image
+                Transform.translate(
+                  offset: const Offset(0, -20),
+                  child: Container(
+                    width: 180,
+                    height: 180,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        width: 5,
+                        color: Colors.black,
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/logo6.png',
+                        width: 150,
+                        height: 150,
+                      ),
+                    ),
+                  ),
+                ),
 
-              // Display the header text
-              const Text(
-                'Phone Verification',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
+                const SizedBox(height: 8),
 
-              // Display the description text
-              const Text(
-                'We need to register your Mobile number before getting Started !',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                textAlign: TextAlign.center,
+                // Display the header text
+                const Text(
+                  'Phone Verification',
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+
+                // Display the description text
+                const Text(
+                  'We need to register your Mobile number before getting Started !',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 12),
+              const Pinput(
+                length: 6,
+                showCursor: true,
+
               ),
-              const SizedBox(height: 12),
-            const Pinput(
-              length: 6,
-              showCursor: true,
+                const SizedBox(height: 20),
+                SizedBox(
+                  height: 45,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "OtpVerification");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Text("Get OTP"),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(onPressed: () {
+                      Navigator.pushNamed(context, 'MobileAuth');
+                    }, child: const Text(
+                      "Edit Phone number ?"
+                    ))
+                  ],
+                )
+              ],
 
             ),
-              const SizedBox(height: 12),
-              SizedBox(
-                height: 45,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, "OtpVerification");
-                  },
-                  style: ElevatedButton.styleFrom(primary: Colors.red),
-                  child: const Text("Verify OTP"),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(onPressed: () {
-                    Navigator.pushNamed(context, 'MobileAuth');
-                  }, child: Text(
-                    "Edit Phone number ?"
-                  ))
-                ],
-              )
-            ],
-
           ),
         ),
       ),
